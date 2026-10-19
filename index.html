@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Messenger</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ============ TOP BAR ============ -->
+<header class="topbar">
+  <div class="topbar-left">
+    <a class="logo" href="#" aria-label="Messenger home">
+      <svg viewBox="0 0 36 36" width="36" height="36" aria-hidden="true">
+        <defs>
+          <linearGradient id="logoGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#00B2FF" />
+            <stop offset="45%" stop-color="#006AFF" />
+            <stop offset="100%" stop-color="#9B36FF" />
+          </linearGradient>
+        </defs>
+        <rect width="36" height="36" rx="10" fill="url(#logoGrad)" />
+        <path fill="#fff" d="M18 8.2c-5.5 0-9.9 4.1-9.9 9.3 0 2.9 1.4 5.5 3.6 7.2v3.3l3.2-1.8c.98.27 2 .42 3.1.42 5.5 0 9.9-4.1 9.9-9.3S23.5 8.2 18 8.2zm5.9 7.1l-4.9 5.1c-.3.3-.8.3-1.1 0l-2.5-2.6-4.3 2.6 4.7-5c.3-.3.8-.3 1.1 0l2.5 2.6 4.3-2.6z" />
+      </svg>
+    </a>
+    <div class="search-wrap">
+      <svg class="search-icon" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M8.5 3a5.5 5.5 0 1 0 3.48 9.76l3.63 3.63 1.06-1.06-3.63-3.63A5.5 5.5 0 0 0 8.5 3zm0 1.5a4 4 0 1 1 0 8 4 4 0 0 1 0-8z"/></svg>
+      <input id="globalSearch" type="text" placeholder="Search Messenger" aria-label="Search Messenger" autocomplete="off" />
+    </div>
+  </div>
+
+  <nav class="topbar-tabs" aria-label="Main navigation">
+    <button class="tab active" data-tab="chats" aria-label="Chats">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.7c-5.3 0-9.4 3.9-9.4 8.8 0 2.7 1.2 5.1 3.2 6.7v3.1l2.9-1.6c.9.25 1.9.38 2.9.38 5.3 0 9.4-3.9 9.4-8.8S17.3 2.7 12 2.7z"/></svg>
+      <span class="tab-dot"></span>
+    </button>
+    <button class="tab" data-tab="people" aria-label="People">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M9 11a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zm7 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM9 12.5c-3.3 0-6 1.7-6 3.8V19h12v-2.7c0-2.1-2.7-3.8-6-3.8zm7 .2c-.6 0-1.2.06-1.7.17 1.1.87 1.7 2 1.7 3.3V19h5v-2.1c0-1.9-2.2-3.2-5-3.2z"/></svg>
+    </button>
+    <button class="tab" data-tab="stories" aria-label="Stories">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zm0 2a7 7 0 1 1 0 14 7 7 0 0 1 0-14zm0 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/></svg>
+    </button>
+  </nav>
+
+  <div class="topbar-right">
+    <button class="round-btn" id="btnNewChat" title="New message" aria-label="New message">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 4a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2h-6v6a1 1 0 1 1-2 0v-6H5a1 1 0 1 1 0-2h6V5a1 1 0 0 1 1-1z"/></svg>
+    </button>
+    <button class="round-btn" id="btnSettings" title="Preferences" aria-label="Preferences">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 8.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm9 3.5c0-.5-.05-1-.13-1.47l2.02-1.56-2-3.46-2.38.96a9.1 9.1 0 0 0-2.55-1.48L15.6 2h-4l-.36 2.55c-.9.35-1.76.85-2.55 1.48L6.31 5.07l-2 3.46 2.02 1.56a9.6 9.6 0 0 0 0 2.94L4.3 14.6l2 3.46 2.38-.96c.79.63 1.65 1.13 2.55 1.48L11.6 21h4l.36-2.55a9.1 9.1 0 0 0 2.55-1.48l2.38.96 2-3.46-2.02-1.56c.08-.47.13-.97.13-1.47z"/></svg>
+    </button>
+    <button class="avatar-btn" id="btnProfile" aria-label="Your profile">
+      <img src="assets/avatars/me.jpg" alt="You" />
+    </button>
+  </div>
+</header>
+
+<!-- ============ APP BODY ============ -->
+<div class="app" id="app">
+
+  <!-- ---------- LEFT: CONVERSATION LIST ---------- -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <h1>Chats</h1>
+      <div class="sidebar-head-actions">
+        <button class="icon-btn" id="btnMarkRead" title="Mark all as read" aria-label="Mark all as read">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M9.6 16.2 5.4 12l-1.4 1.4 5.6 5.6L21 7.6 19.6 6.2z"/></svg>
+        </button>
+        <button class="icon-btn" id="btnMoreChats" title="More" aria-label="More options">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="12" r="2" fill="currentColor"/><circle cx="12" cy="12" r="2" fill="currentColor"/><circle cx="19" cy="12" r="2" fill="currentColor"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="filter-row" id="filterRow">
+      <button class="filter-pill active" data-filter="all">All</button>
+      <button class="filter-pill" data-filter="unread">Unread</button>
+      <button class="filter-pill" data-filter="groups">Groups</button>
+      <button class="filter-pill" data-filter="brands">Businesses</button>
+    </div>
+
+    <div class="sidebar-search">
+      <svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M8.5 3a5.5 5.5 0 1 0 3.48 9.76l3.63 3.63 1.06-1.06-3.63-3.63A5.5 5.5 0 0 0 8.5 3zm0 1.5a4 4 0 1 1 0 8 4 4 0 0 1 0-8z"/></svg>
+      <input id="chatSearch" type="text" placeholder="Search chats" aria-label="Search chats" autocomplete="off" />
+    </div>
+
+    <div class="chat-list" id="chatList" role="list"></div>
+
+    <div class="sidebar-footer">
+      <button id="btnNewGroup" class="footer-link">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 4a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2h-6v6a1 1 0 1 1-2 0v-6H5a1 1 0 1 1 0-2h6V5a1 1 0 0 1 1-1z"/></svg>
+        Create new group
+      </button>
+    </div>
+  </aside>
+
+  <!-- ---------- MIDDLE: THREAD ---------- -->
+  <main class="thread" id="thread">
+    <div class="thread-empty" id="threadEmpty">
+      <div class="empty-art">
+        <svg viewBox="0 0 240 200" width="220" aria-hidden="true">
+          <ellipse cx="120" cy="178" rx="86" ry="10" fill="#e6e8ee"/>
+          <rect x="36" y="44" width="168" height="112" rx="16" fill="#fff" stroke="#dfe3eb" stroke-width="2"/>
+          <rect x="58" y="68" width="76" height="10" rx="5" fill="#e9ecf2"/>
+          <rect x="58" y="88" width="110" height="10" rx="5" fill="#eef0f5"/>
+          <rect x="58" y="108" width="56" height="10" rx="5" fill="#eef0f5"/>
+          <circle cx="182" cy="140" r="26" fill="#006AFF"/>
+          <path d="M182 129a11 11 0 0 0-11 11c0 3.3 1.5 6.2 3.8 8.2l-1.4 5.4 5.6-2.2c.96.26 1.96.4 3 .4a11 11 0 0 0 0-22z" fill="#fff"/>
+        </svg>
+      </div>
+      <h2>Your messages</h2>
+      <p>Pick a conversation on the left, or start a new one.</p>
+      <button class="primary-btn" id="btnEmptyNew">Send a message</button>
+    </div>
+
+    <div class="thread-wrap" id="threadWrap" hidden>
+      <header class="thread-head">
+        <button class="icon-btn back-btn" id="btnBack" aria-label="Back to chats">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M15.4 5.4 13.99 4l-8 8 8 8 1.41-1.41L8.83 12z"/></svg>
+        </button>
+        <button class="thread-person" id="threadPerson">
+          <span class="avatar-stack" id="threadAvatar"></span>
+          <span class="thread-id">
+            <span class="thread-name" id="threadName"></span>
+            <span class="thread-sub" id="threadSub"></span>
+          </span>
+        </button>
+        <div class="thread-actions">
+          <button class="icon-btn" id="btnCall" title="Audio call" aria-label="Audio call">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.28-.28.7-.36 1.05-.24 1.14.38 2.37.58 3.65.58.6 0 1.1.5 1.1 1.1v3.5c0 .6-.5 1.1-1.1 1.1C10.9 21.24 2.76 13.1 2.76 3.1 2.76 2.5 3.26 2 3.86 2h3.5c.6 0 1.1.5 1.1 1.1 0 1.28.2 2.5.58 3.65.12.35.04.76-.24 1.05l-2.2 2.2z"/></svg>
+          </button>
+          <button class="icon-btn" id="btnVideo" title="Video call" aria-label="Video call">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/></svg>
+          </button>
+          <button class="icon-btn" id="btnInfo" title="Conversation info" aria-label="Conversation info">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 4a1.4 1.4 0 1 1 0 2.8A1.4 1.4 0 0 1 12 6zm1.2 12h-2.4v-7h2.4v7z"/></svg>
+          </button>
+        </div>
+      </header>
+
+      <div class="thread-scroll" id="threadScroll">
+        <div class="pinned-banner" id="pinnedBanner" hidden>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16 3l5 5-3 1-4 4 1 5-2 2-4.5-4.5L4 20l-1-1 4.5-4.5L3 10l2-2 5 1 4-4 1-3z"/></svg>
+          <span id="pinnedText"></span>
+        </div>
+        <div class="messages" id="messages"></div>
+      </div>
+
+      <div class="typing-row" id="typingRow" hidden>
+        <div class="typing-bubble"><span></span><span></span><span></span></div>
+        <span class="typing-label" id="typingLabel">typing…</span>
+      </div>
+
+      <div class="composer" id="composer">
+        <div class="reply-preview" id="replyPreview" hidden>
+          <div class="reply-bar"></div>
+          <div class="reply-body">
+            <span class="reply-name" id="replyName"></span>
+            <span class="reply-text" id="replyText"></span>
+          </div>
+          <button class="icon-btn" id="btnCancelReply" aria-label="Cancel reply">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M18.3 5.71 12 12l6.3 6.29-1.41 1.42L10.59 13.4 4.3 19.7 2.89 18.3 9.17 12 2.89 5.71 4.3 4.29l6.29 6.3 6.3-6.3z"/></svg>
+          </button>
+        </div>
+        <div class="composer-bar">
+          <button class="icon-btn" id="btnAttach" title="Attach" aria-label="Attach a file">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.5 6v11.5a4.5 4.5 0 0 1-9 0V5a3 3 0 0 1 6 0v10.5a1.5 1.5 0 0 1-3 0V7H9v8.5a3 3 0 0 0 6 0V5a4.5 4.5 0 0 0-9 0v12.5a6 6 0 0 0 12 0V6h-1.5z"/></svg>
+          </button>
+          <button class="icon-btn" id="btnGif" title="Send a GIF" aria-label="Send a GIF">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20 5H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm-9.5 10.5H8.6c-.9 0-1.6-.7-1.6-1.6v-3.8c0-.9.7-1.6 1.6-1.6h1.9V10h-2v3.4h1v-1.2H8.7V11h1.8v4.5zm2-7h1.6v7h-1.6v-7zm6.4 0v1.5h-2.3v1.4h1.8V12h-1.8v3.5H15v-7h3.9z"/></svg>
+          </button>
+          <button class="icon-btn" id="btnSticker" title="Stickers" aria-label="Send a sticker">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0 0 20c.34 0 .67-.02 1-.05V17a5 5 0 0 1 5-5h4.95c.03-.33.05-.66.05-1A10 10 0 0 0 12 2zM8.5 9a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm7 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zM15 18.9V17a3 3 0 0 1 3-3h1.9A8 8 0 0 1 15 18.9z"/></svg>
+          </button>
+          <div class="input-wrap">
+            <textarea id="messageInput" rows="1" placeholder="Aa" aria-label="Write a message" autocomplete="off"></textarea>
+          </div>
+          <button class="icon-btn" id="btnEmoji" title="Emoji" aria-label="Choose an emoji">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm-3.5 6.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm7 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zM12 18c-2.5 0-4.6-1.6-5.3-3.8h10.6A5.5 5.5 0 0 1 12 18z"/></svg>
+          </button>
+          <button class="icon-btn" id="btnLike" title="Send a like" aria-label="Send a like">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 21s-7.5-4.6-9.4-9.2C1.2 8.3 3 5 6.2 5c1.9 0 3.4 1 4.3 2.3l1.5 2 1.5-2C14.4 6 15.9 5 17.8 5 21 5 22.8 8.3 21.4 11.8 19.5 16.4 12 21 12 21z"/></svg>
+          </button>
+          <button class="send-btn" id="btnSend" title="Send" aria-label="Send message" disabled>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3.4 20.4 21 12 3.4 3.6 3.4 10l12.6 2-12.6 2z"/></svg>
+          </button>
+        </div>
+        <div class="composer-hint"><kbd>Enter</kbd> to send · <kbd>Shift</kbd> + <kbd>Enter</kbd> for a new line</div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ---------- RIGHT: INFO PANEL ---------- -->
+  <aside class="infopanel" id="infoPanel" hidden>
+    <div class="info-head">
+      <h2 id="infoTitle">Conversation info</h2>
+      <button class="icon-btn" id="btnCloseInfo" aria-label="Close info">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M18.3 5.71 12 12l6.3 6.29-1.41 1.42L10.59 13.4 4.3 19.7 2.89 18.3 9.17 12 2.89 5.71 4.3 4.29l6.29 6.3 6.3-6.3z"/></svg>
+      </button>
+    </div>
+    <div class="info-scroll" id="infoScroll"></div>
+  </aside>
+</div>
+
+<!-- ============ OVERLAYS ============ -->
+<div class="popover" id="emojiPopover" hidden></div>
+
+<div class="popover gif-popover" id="gifPopover" hidden>
+  <div class="popover-title">Trending GIFs</div>
+  <div class="gif-grid" id="gifGrid"></div>
+</div>
+
+<div class="popover sticker-popover" id="stickerPopover" hidden>
+  <div class="popover-title">Stickers</div>
+  <div class="sticker-grid" id="stickerGrid"></div>
+</div>
+
+<div class="popover attach-popover" id="attachPopover" hidden>
+  <button data-attach="photo"><span>🖼️</span> Photo</button>
+  <button data-attach="file"><span>📄</span> Document</button>
+  <button data-attach="poll"><span>📊</span> Poll</button>
+  <button data-attach="location"><span>📍</span> Location</button>
+</div>
+
+<div class="modal-backdrop" id="modalBackdrop" hidden>
+  <div class="modal" id="modal" role="dialog" aria-modal="true"></div>
+</div>
+
+<div class="toast-stack" id="toastStack"></div>
+
+<script src="js/data.js"></script>
+<script src="js/engine.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
